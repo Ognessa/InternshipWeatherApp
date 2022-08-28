@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <!-- Tab Menu Titles -->
+    <string name="cities_menu">Cities</string>
+    <string name="home_menu">Home</string>
+    <string name="settings_menu">Settings</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_info_navigation"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.onix.internship.ui.homeScreen.HomeScreenFragment"
+        android:label="HomeScreenFragment" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_weekWeatherFragment"
+            app:destination="@id/weekWeatherFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weekWeatherFragment"
+        android:name="com.onix.internship.ui.weekWeatherScreen.WeekWeatherFragment"
+        android:label="WeekWeatherFragment" />
+
+</navigation>
