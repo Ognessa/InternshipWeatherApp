@@ -6,4 +6,10 @@
     <string name="home_menu">Home</string>
     <string name="settings_menu">Settings</string>
 
+    <string name="temperature">Temperature: %s°C</string>
+    <string name="humidity">Humidity: %s %</string>
+    <string name="wind_speed">Wind speed: %s m/s</string>
+    
+    <string name="data_empty">No data about weather.\nAdd your city to get info about weather/</string>
+
 </resources>
