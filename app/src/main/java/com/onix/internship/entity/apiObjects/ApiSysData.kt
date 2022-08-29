@@ -1,4 +1,4 @@
-package com.onix.internship.objects.apiObjects
+package com.onix.internship.entity.apiObjects
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,8 +1,8 @@
 package com.onix.internship.data.mappers
 
 import com.onix.internship.arch.mapper.Mapper
-import com.onix.internship.objects.apiObjects.ApiWeatherData
-import com.onix.internship.objects.local.WeatherData
+import com.onix.internship.entity.apiObjects.ApiWeatherData
+import com.onix.internship.entity.local.WeatherData
 
 class ApiWeatherDataMapper(
     private val apiMainWeatherDataMapper : ApiMainWeatherDataMapper,

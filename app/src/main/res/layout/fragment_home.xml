@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.onix.internship.ui.homeMenu.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_5"
+        tools:context=".ui.homeMenu.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/weather_data_padding"
+            android:layout_marginEnd="@dimen/weather_data_padding"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.storage.locationList.isEmpty ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                android:id="@+id/mainDayTitle"
+                style="@style/TitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@={viewModel.model.city}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mainDayImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_weather_img_size"
+                android:src="@drawable/logo"
+                app:layout_constraintTop_toBottomOf="@+id/mainDayTitle" />
+
+            <TextView
+                android:id="@+id/mainDayTemp"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="@dimen/margin_5"
+                android:text="@string/temperature"
+                app:layout_constraintEnd_toStartOf="@+id/mainDayTempValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainDayImage" />
+
+            <TextView
+                android:id="@+id/mainDayTempValue"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.model.temp}"
+                app:layout_constraintBottom_toBottomOf="@+id/mainDayTemp"
+                app:layout_constraintStart_toEndOf="@+id/mainDayTemp"
+                app:layout_constraintTop_toTopOf="@+id/mainDayTemp" />
+
+            <TextView
+                android:id="@+id/mainDayTempSymbol"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature_symbol"
+                app:layout_constraintBottom_toBottomOf="@+id/mainDayTempValue"
+                app:layout_constraintStart_toEndOf="@+id/mainDayTempValue"
+                app:layout_constraintTop_toTopOf="@+id/mainDayTempValue" />
+
+            <TextView
+                android:id="@+id/mainDayHum"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_5"
+                android:text="@string/humidity"
+                app:layout_constraintEnd_toStartOf="@+id/mainDayHumValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainDayTemp" />
+
+            <TextView
+                android:id="@+id/mainDayHumValue"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.model.hum}"
+                app:layout_constraintBottom_toBottomOf="@+id/mainDayHum"
+                app:layout_constraintStart_toEndOf="@+id/mainDayHum"
+                app:layout_constraintTop_toTopOf="@+id/mainDayHum" />
+
+            <TextView
+                android:id="@+id/mainDayHumSymbol"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity_symbol"
+                app:layout_constraintBottom_toBottomOf="@+id/mainDayHumValue"
+                app:layout_constraintStart_toEndOf="@+id/mainDayHumValue"
+                app:layout_constraintTop_toTopOf="@+id/mainDayHumValue" />
+
+            <TextView
+                android:id="@+id/mainDayWindSpeed"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_5"
+                android:text="@string/wind_speed"
+                app:layout_constraintEnd_toStartOf="@+id/mainDayWindSpeedValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainDayHum" />
+
+            <TextView
+                android:id="@+id/mainDayWindSpeedValue"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.model.windSpeed}"
+                app:layout_constraintBottom_toBottomOf="@id/mainDayWindSpeed"
+                app:layout_constraintStart_toEndOf="@+id/mainDayWindSpeed"
+                app:layout_constraintTop_toTopOf="@+id/mainDayWindSpeed" />
+
+            <TextView
+                android:id="@+id/mainDayWindSpeedSymbol"
+                style="@style/StandardTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind_speed_symbol"
+                app:layout_constraintBottom_toBottomOf="@+id/mainDayWindSpeedValue"
+                app:layout_constraintStart_toEndOf="@+id/mainDayWindSpeedValue"
+                app:layout_constraintTop_toTopOf="@+id/mainDayWindSpeedValue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/data_empty"
+            android:visibility="@{viewModel.storage.locationList.isEmpty ? View.VISIBLE : View.GONE}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

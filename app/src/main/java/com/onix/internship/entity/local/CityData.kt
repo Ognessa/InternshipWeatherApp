@@ -1,4 +1,4 @@
-package com.onix.internship.objects.local
+package com.onix.internship.entity.local
 
 data class CityData (
     val id : Int,

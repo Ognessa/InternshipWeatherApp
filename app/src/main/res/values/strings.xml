@@ -6,11 +6,15 @@
     <string name="home_menu">Home</string>
     <string name="settings_menu">Settings</string>
 
-    <string name="today">%s Today</string>
-    <string name="tomorrow">Tomorrow %s</string>
-    <string name="temperature">Temperature: %s°C</string>
-    <string name="humidity">Humidity: %s %</string>
-    <string name="wind_speed">Wind speed: %s m/s</string>
+    <string name="city">%s, %s</string>
+    <string name="today">Today: %s°</string>
+    <string name="tomorrow">Tomorrow: %s°</string>
+    <string name="temperature">Temperature:</string>
+    <string name="temperature_symbol">°C</string>
+    <string name="humidity">Humidity:</string>
+    <string name="humidity_symbol">%</string>
+    <string name="wind_speed">Wind speed:</string>
+    <string name="wind_speed_symbol">m/s</string>
 
     <string name="data_empty">No data about weather.\nAdd your city to get info about weather/</string>
 

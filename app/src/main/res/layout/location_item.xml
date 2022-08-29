@@ -6,39 +6,67 @@
 
         <variable
             name="locationItem"
-            type="com.onix.internship.entity.TestDataClass" />
+            type="com.onix.internship.entity.local.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="150dp">
 
         <TextView
             android:id="@+id/cityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@{locationItem.city}"
+            android:gravity="center"
+            android:text="@{@string/city(locationItem.city.name, locationItem.city.country)}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/todayTemp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/todayTemp"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{locationItem.temp + @string/today}"
+            android:textSize="14sp"
+            android:text="@{@string/today(locationItem.list[0].main.temp)}"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/tomorrowTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cityName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/todayWeatherImg"
+            loadUrlImage="@{locationItem.list[0].weather[0].icon}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/todayTemp"
+            app:layout_constraintStart_toEndOf="@+id/todayTemp"
+            app:layout_constraintTop_toTopOf="@+id/todayTemp" />
 
         <TextView
             android:id="@+id/tomorrowTemp"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="@{@string/tomorrow + locationItem.temp}"
+            android:gravity="center"
+            android:text="@{@string/tomorrow(locationItem.list[2].main.temp)}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/todayTemp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tomorrowWeatherImg"
+            loadUrlImage="@{locationItem.list[2].weather[0].icon}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tomorrowTemp"
+            app:layout_constraintStart_toEndOf="@+id/tomorrowTemp"
+            app:layout_constraintTop_toTopOf="@+id/tomorrowTemp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

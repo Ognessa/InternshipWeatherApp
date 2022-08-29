@@ -67,3 +67,10 @@ fun SwipeRefreshLayout.onRefresh(callback: () -> Unit) {
         isRefreshing = false
     }
 }
+
+@BindingAdapter("loadUrlImage")
+fun ImageView.loadUrlImage(image: String) {
+    Glide.with(context)
+        .load(Uri.parse(image))
+        .into(this)
+}
