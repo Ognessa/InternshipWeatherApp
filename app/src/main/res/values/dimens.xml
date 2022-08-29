@@ -3,4 +3,7 @@
 
     <dimen name="margin_5">5dp</dimen>
 
+    <dimen name="main_weather_img_size">200dp</dimen>
+    <dimen name="weather_data_padding">40dp</dimen>
+
 </resources>

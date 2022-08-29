@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.onix.internship"
         minSdk 23
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -37,7 +37,7 @@ android {
         dataBinding = true
     }
     namespace 'com.onix.internship'
-    buildToolsVersion '32.1.0-rc1'
+    buildToolsVersion '30.0.2'
 }
 
 dependencies {
