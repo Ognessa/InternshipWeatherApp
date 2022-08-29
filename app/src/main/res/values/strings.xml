@@ -6,4 +6,6 @@
     <string name="home_menu">Home</string>
     <string name="settings_menu">Settings</string>
 
+    <string name="today">%s Today</string>
+    <string name="tomorrow">Tomorrow %s</string>
 </resources>
