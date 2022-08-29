@@ -2,7 +2,6 @@ package com.onix.internship.objects.apiObjects
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import okhttp3.internal.ignoreIoExceptions
 
 @Serializable
 data class ApiWeatherData(
