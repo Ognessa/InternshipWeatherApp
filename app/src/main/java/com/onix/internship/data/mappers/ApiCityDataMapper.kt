@@ -1,8 +1,8 @@
 package com.onix.internship.data.mappers
 
 import com.onix.internship.arch.mapper.Mapper
-import com.onix.internship.objects.apiObjects.ApiCityData
-import com.onix.internship.objects.local.CityData
+import com.onix.internship.entity.apiObjects.ApiCityData
+import com.onix.internship.entity.local.CityData
 
 class ApiCityDataMapper(
     private val apiLocationDataMapper : ApiLocationDataMapper

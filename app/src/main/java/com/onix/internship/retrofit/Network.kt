@@ -1,7 +1,7 @@
 package com.onix.internship.retrofit
 
 import com.onix.internship.arch.mapper.Either
-import com.onix.internship.objects.apiObjects.ApiData
+import com.onix.internship.entity.apiObjects.ApiData
 
 class Network(private val networkService: NetworkService) {
 

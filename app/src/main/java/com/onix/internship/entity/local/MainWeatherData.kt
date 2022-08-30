@@ -1,7 +1,7 @@
-package com.onix.internship.objects.local
+package com.onix.internship.entity.local
 
 data class MainWeatherData (
-    val temp : Double,
+    val temp : Int,
     val feels_like : Double,
     val temp_min : Double,
     val temp_max : Double,

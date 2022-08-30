@@ -11,13 +11,13 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    viewModel { TabMenuViewModel(get(), get()) }
-    viewModel { AddCityViewModel() }
+    viewModel { TabMenuViewModel(get()) }
+    viewModel { AddCityViewModel(get(), get(), get(), get(), get()) }
     viewModel { CityInfoViewModel() }
 
-    viewModel{ CitiesViewModel() }
-    viewModel{ HomeViewModel() }
-    viewModel{ SettingsViewModel() }
+    viewModel { CitiesViewModel(get(), get()) }
+    viewModel { HomeViewModel(get(), get()) }
+    viewModel { SettingsViewModel() }
 
     viewModel { MainViewModel() }
 }

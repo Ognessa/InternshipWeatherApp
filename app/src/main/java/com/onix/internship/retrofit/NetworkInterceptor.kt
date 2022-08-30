@@ -11,8 +11,6 @@ class NetworkInterceptor : Interceptor {
         val request: Request = chain.request()
         Log.d("DEBUG", "$request")
 
-        val response = chain.proceed(request)
-
-        return response
+        return chain.proceed(request)
     }
 }
