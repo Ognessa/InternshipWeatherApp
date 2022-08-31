@@ -10,12 +10,12 @@
     <string name="today">Today: %s°</string>
     <string name="tomorrow">Tomorrow: %s°</string>
 
-    <string name="temperature">Temperature:</string>
-    <string name="temperature_symbol">°C</string>
-    <string name="humidity">Humidity:</string>
-    <string name="humidity_symbol">%</string>
-    <string name="wind_speed">Wind speed:</string>
-    <string name="wind_speed_symbol">m/s</string>
+    <string name="temperature">Temperature: </string>
+    <string name="temperature_symbol"> °C</string>
+    <string name="humidity">Humidity: </string>
+    <string name="humidity_symbol"> %</string>
+    <string name="wind_speed">Wind speed: </string>
+    <string name="wind_speed_symbol"> m/s</string>
 
     <!--Network Errors-->
     <string name="no_internet_connection">NO INTERNET CONNECTION</string>
@@ -25,5 +25,8 @@
 
     <string name="empty_search">Please, enter city name</string>
     <string name="data_empty">No data about weather.\nAdd your city to get info about weather/</string>
+
+    <string name="theme">Theme:</string>
+    <string name="night_mode">Night mode</string>
 
 </resources>

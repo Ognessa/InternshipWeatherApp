@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/mainDayTemp"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -57,7 +57,6 @@
 
             <TextView
                 android:id="@+id/mainDayTempValue"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.model.temp}"
@@ -67,7 +66,6 @@
 
             <TextView
                 android:id="@+id/mainDayTempSymbol"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/temperature_symbol"
@@ -89,7 +87,6 @@
 
             <TextView
                 android:id="@+id/mainDayHumValue"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.model.hum}"
@@ -99,7 +96,6 @@
 
             <TextView
                 android:id="@+id/mainDayHumSymbol"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/humidity_symbol"
@@ -121,7 +117,6 @@
 
             <TextView
                 android:id="@+id/mainDayWindSpeedValue"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.model.windSpeed}"
@@ -131,7 +126,6 @@
 
             <TextView
                 android:id="@+id/mainDayWindSpeedSymbol"
-                style="@style/StandardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wind_speed_symbol"

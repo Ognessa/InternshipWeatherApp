@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_5"
         tools:context=".ui.settingsMenu.SettingsFragment">
 
         <TextView
+            android:id="@+id/textView"
+            style="@style/TitleStyle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Settings" />
+            android:layout_height="wrap_content"
+            android:text="@string/theme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </FrameLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/night_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_20dp"
+            android:paddingEnd="@dimen/padding_20dp"
+            android:text="@string/night_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
