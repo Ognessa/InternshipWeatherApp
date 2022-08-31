@@ -7,7 +7,9 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
-class NetworkFactory {
+class NetworkFactory(
+    private val networkInterceptor: NetworkInterceptor
+) {
     private val baseUrl = "http://api.openweathermap.org"
 
     fun <S> createService(protocol: Class<S>): S {
@@ -27,7 +29,7 @@ class NetworkFactory {
     private val okHttpClient: OkHttpClient
         get() = OkHttpClient
             .Builder()
-            .addInterceptor(NetworkInterceptor())
+            .addInterceptor(networkInterceptor)
             .build()
 
 }

@@ -9,6 +9,7 @@
     <string name="city">%s, %s</string>
     <string name="today">Today: %s°</string>
     <string name="tomorrow">Tomorrow: %s°</string>
+
     <string name="temperature">Temperature:</string>
     <string name="temperature_symbol">°C</string>
     <string name="humidity">Humidity:</string>
@@ -16,6 +17,13 @@
     <string name="wind_speed">Wind speed:</string>
     <string name="wind_speed_symbol">m/s</string>
 
+    <!--Network Errors-->
+    <string name="no_internet_connection">NO INTERNET CONNECTION</string>
+    <string name="request_error">REQUEST_ERROR</string>
+    <string name="unknown_host">UNKNOWN HOST</string>
+    <string name="unknown_error">UNKNOWN ERROR</string>
+
+    <string name="empty_search">Please, enter city name</string>
     <string name="data_empty">No data about weather.\nAdd your city to get info about weather/</string>
 
 </resources>

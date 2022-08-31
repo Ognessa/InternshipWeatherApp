@@ -39,6 +39,7 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
     private fun onBaseObservers() {
         viewModel.loading.observe(viewLifecycleOwner) { hideKeyboard() }
         viewModel.massageEvent.observe(viewLifecycleOwner) { showSnack(it) }
+        viewModel.massageByIdEvent.observe(viewLifecycleOwner) {showSnack(resources.getString(it))}
     }
 
     protected fun showSnack(msg: String) {
