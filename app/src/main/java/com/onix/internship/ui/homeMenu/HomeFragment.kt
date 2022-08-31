@@ -5,6 +5,7 @@ import android.view.View
 import com.onix.internship.R
 import com.onix.internship.arch.BaseFragment
 import com.onix.internship.databinding.FragmentHomeBinding
+import com.onix.internship.ui.homeMenu.adapter.HomeRecyclerListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -13,5 +14,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
+
+        setRecyclerAdapter()
+
+        viewModel.getListOfDay()
+    }
+
+    private fun setRecyclerAdapter() {
+        val adapter = HomeRecyclerListAdapter(viewModel)
+
+        binding.dayRecycler.adapter = adapter
+
+        viewModel.daysList.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
     }
 }

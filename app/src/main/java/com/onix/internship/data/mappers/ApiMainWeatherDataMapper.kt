@@ -9,8 +9,8 @@ class ApiMainWeatherDataMapper : Mapper<ApiMainWeatherData, MainWeatherData>() {
         return MainWeatherData(
             temp = (from.temp - 273.15).toInt(),
             feels_like = from.feels_like,
-            temp_min = from.temp_min,
-            temp_max = from.temp_max,
+            temp_min = ((from.temp_min - 273.15).toInt()).toString(),
+            temp_max = ((from.temp_max - 273.15).toInt()).toString(),
             pressure = from.pressure,
             sea_level = from.sea_level,
             grnd_level = from.grnd_level,

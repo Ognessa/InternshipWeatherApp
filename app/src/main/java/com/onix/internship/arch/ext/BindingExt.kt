@@ -13,6 +13,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
+import com.onix.internship.R
 
 @BindingAdapter("circleImage", "placeholder", requireAll = false)
 fun ImageView.bindCircleImage(image: String?, placeholder: Drawable?) {
@@ -72,5 +73,7 @@ fun SwipeRefreshLayout.onRefresh(callback: () -> Unit) {
 fun ImageView.loadUrlImage(image: String) {
     Glide.with(context)
         .load(Uri.parse(image))
+        .placeholder(R.drawable.ic_image_search)
+        .error(R.drawable.ic_broken)
         .into(this)
 }

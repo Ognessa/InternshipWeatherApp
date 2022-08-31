@@ -9,18 +9,18 @@ import com.onix.internship.arch.adapter.BaseViewHolder
 import com.onix.internship.databinding.LocationItemBinding
 import com.onix.internship.entity.local.Data
 
-class RecyclerListAdapter : BaseRecyclerListAdapter<Data>(RecyclerDiffCallback()) {
+class CityRecyclerListAdapter(private val onItemClickListener: OnItemClickListener) : BaseRecyclerListAdapter<Data>(RecyclerDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): BaseViewHolder<Data, out ViewDataBinding> {
-        return from(parent)
+        return from(parent, onItemClickListener)
     }
 
-    private fun from(parent: ViewGroup): ViewHolder {
+    private fun from(parent: ViewGroup, onItemClickListener: OnItemClickListener): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.location_item, parent, false)
         val binding = LocationItemBinding.bind(view)
-        return ViewHolder(binding)
+        return ViewHolder(binding, onItemClickListener)
     }
 }

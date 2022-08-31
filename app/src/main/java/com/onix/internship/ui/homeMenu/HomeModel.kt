@@ -1,10 +1,15 @@
 package com.onix.internship.ui.homeMenu
 
-import androidx.databinding.ObservableField
+import com.onix.internship.entity.local.CityData
+import com.onix.internship.entity.local.Data
+import com.onix.internship.entity.local.LocationData
 
 data class HomeModel(
-    val city: ObservableField<String> = ObservableField(),
-    val temp: ObservableField<String> = ObservableField(),
-    val hum: ObservableField<String> = ObservableField(),
-    val windSpeed: ObservableField<String> = ObservableField()
+    var day: Data = Data(
+        "",
+        0,
+        0,
+        listOf(),
+        CityData(0, "", LocationData(0.0, 0.0), "", 0, 0, 0, 0)
+    )
 )

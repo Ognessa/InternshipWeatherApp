@@ -40,7 +40,7 @@ class Network(
         }
     }
 
-    fun handleException(e : Throwable) : NetworkExceptions{
+    private fun handleException(e : Throwable) : NetworkExceptions{
         return when(e){
             is UnknownHostException -> NetworkExceptions.UNKNOWN_HOST
             else -> NetworkExceptions.UNKNOWN_ERROR

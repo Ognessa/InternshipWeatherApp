@@ -5,10 +5,10 @@ import com.onix.internship.entity.local.Data
 
 class RecyclerDiffCallback : DiffUtil.ItemCallback<Data>() {
     override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
-        return oldItem.city.id == newItem.city.id
+        return oldItem == newItem
     }
 
     override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
-        return oldItem == newItem
+        return oldItem.isChoice == newItem.isChoice
     }
 }

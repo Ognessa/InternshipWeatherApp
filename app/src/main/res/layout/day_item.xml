@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dayItem"
+            type="com.onix.internship.entity.local.WeatherData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainItemContainer"
+        android:layout_width="150dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/weatherDayName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/weatherDayNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/weatherDayNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{dayItem.dt_txt}"
+            app:layout_constraintBottom_toTopOf="@+id/weatherDayMonth"
+            app:layout_constraintTop_toBottomOf="@+id/weatherDayName" />
+
+        <TextView
+            android:id="@+id/weatherDayMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/weatherDayImage"
+            app:layout_constraintTop_toBottomOf="@+id/weatherDayNumber" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weatherDayImage"
+            loadUrlImage="@{dayItem.weather.get(0).icon}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/weatherDayMinTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weatherDayMonth" />
+
+        <TextView
+            android:id="@+id/weatherDayMinTempText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/min_temp"
+            app:layout_constraintBottom_toTopOf="@+id/weatherDayMinTemp"
+            app:layout_constraintEnd_toStartOf="@id/weatherDayMaxTempText"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/weatherDayMaxTempText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/max_temp"
+            app:layout_constraintBottom_toTopOf="@+id/weatherDayMaxTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weatherDayMinTempText" />
+
+        <TextView
+            android:id="@+id/weatherDayMinTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{dayItem.main.temp_min}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/weatherDayMaxTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weatherDayImage" />
+
+        <TextView
+            android:id="@+id/weatherDayMaxTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{dayItem.main.temp_max}"
+            app:layout_constraintBottom_toBottomOf="@id/weatherDayMinTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weatherDayMinTemp"
+            app:layout_constraintTop_toTopOf="@+id/weatherDayMinTemp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

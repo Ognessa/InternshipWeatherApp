@@ -10,6 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainItemContainer"
         android:layout_width="match_parent"
         android:layout_height="150dp">
 
@@ -29,9 +30,9 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="14sp"
             android:text="@{@string/today(locationItem.list[0].main.temp)}"
             android:textColor="@color/black"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/tomorrowTemp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +68,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/tomorrowTemp"
             app:layout_constraintStart_toEndOf="@+id/tomorrowTemp"
             app:layout_constraintTop_toTopOf="@+id/tomorrowTemp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/showMoreInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{locationItem.isChoice ? @drawable/ic_baseline_star : @drawable/ic_outline_star}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
