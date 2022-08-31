@@ -12,8 +12,14 @@ open class BaseViewModel : ViewModel() {
     val loading = MutableLiveData(false)
     val massageEvent = SingleLiveEvent<String>()
 
+    val massageByIdEvent = SingleLiveEvent<Int>()
+
     protected fun showSnack(msg: String?) {
         msg?.let { massageEvent.postValue(it) }
+    }
+
+    protected fun showSnack(msgId : Int?) {
+        msgId?.let { massageByIdEvent.postValue(it) }
     }
 
     protected fun launch(block: suspend CoroutineScope.() -> Unit) =

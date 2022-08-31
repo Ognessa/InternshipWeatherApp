@@ -1,12 +1,10 @@
 package com.onix.internship.ui.addCity
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.onix.internship.R
 import com.onix.internship.arch.BaseViewModel
-import com.onix.internship.arch.mapper.onFailure
-import com.onix.internship.arch.mapper.onSuccess
 import com.onix.internship.data.mappers.ApiDataMapper
 import com.onix.internship.data.storage.LocationStorage
 import com.onix.internship.retrofit.Network
@@ -26,20 +24,28 @@ class AddCityViewModel(
     val goBack: LiveData<Unit> = _goBack
 
     fun backToCityList() {
-        getCityWeather(model.location.get() ?: "New York")
+        val cityName = model.location.get()
+
+        if(!cityName.isNullOrEmpty())
+            getCityWeather(cityName)
+        else
+            showSnack(R.string.empty_search)
     }
 
     private fun getCityWeather(cityName: String) {
         viewModelScope.launch {
             network.searchByCityName(cityName, API_KEY)
-                .onSuccess {
-                    storage.addLocation(mapper.map(it))
-                    _goBack.postValue(Unit)
-                }
-                .onFailure {
-                    Log.d("DEBUG2", "Fail")
-                }
-            setCurrentDay()
+                .fold(
+                    left = {
+                        showSnack(it.getValue())
+                    },
+                    right = {
+                        storage.addLocation(mapper.map(it))
+                        setCurrentDay()
+                        _goBack.postValue(Unit)
+                    }
+                )
+
         }
     }
 
