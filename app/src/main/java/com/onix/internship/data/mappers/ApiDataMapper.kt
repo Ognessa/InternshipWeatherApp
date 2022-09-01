@@ -5,6 +5,7 @@ import com.onix.internship.entity.apiObjects.ApiData
 import com.onix.internship.entity.apiObjects.ApiWeatherData
 import com.onix.internship.entity.local.Data
 import com.onix.internship.entity.local.WeatherData
+import com.onix.internship.entity.local.WeatherDay
 
 class ApiDataMapper(
     private val apiWeatherDataMapper: ApiWeatherDataMapper,
@@ -20,7 +21,7 @@ class ApiDataMapper(
         )
     }
 
-    private fun createMapOfDates(list: List<ApiWeatherData>): HashMap<String, List<WeatherData>> {
+    private fun createMapOfDates(list: List<ApiWeatherData>): List<WeatherDay> {
         val weatherDataList = list.map { apiWeatherDataMapper.map(it) }
         val dataMap = hashMapOf<String, List<WeatherData>>()
 
@@ -31,6 +32,16 @@ class ApiDataMapper(
             dataMap[it.date] = tempList
         }
 
-        return dataMap
+        val resultList = mutableListOf<WeatherDay>()
+        dataMap.forEach {
+            resultList.add(
+                WeatherDay(
+                    date = it.key,
+                    hoursList = it.value
+                )
+            )
+        }
+
+        return resultList
     }
 }
