@@ -13,19 +13,11 @@
             android:id="@+id/action_tabMenuFragment_to_addCityFragment"
             app:destination="@id/addCityFragment" />
 
-        <action
-            android:id="@+id/action_tabMenuFragment_to_cityInfoFragment"
-            app:destination="@id/cityInfoFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/addCityFragment"
         android:name="com.onix.internship.ui.addCity.AddCityFragment"
         android:label="AddCityFragment" />
-
-    <fragment
-        android:id="@+id/cityInfoFragment"
-        android:name="com.onix.internship.ui.cityMoreInfo.CityInfoFragment"
-        android:label="CityInfoFragment" />
 
 </navigation>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather App</string>
+    <string name="app_name" translatable="false">Weather App</string>
 
     <!-- Tab Menu Titles -->
     <string name="cities_menu">Cities</string>
@@ -28,5 +28,8 @@
 
     <string name="theme">Theme:</string>
     <string name="night_mode">Night mode</string>
+    <string name="add_location">Add location</string>
+    <string name="min_temp">MIN.</string>
+    <string name="max_temp">MAX.</string>
 
 </resources>

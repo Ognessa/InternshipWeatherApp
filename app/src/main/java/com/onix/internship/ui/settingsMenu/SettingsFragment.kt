@@ -2,7 +2,6 @@ package com.onix.internship.ui.settingsMenu
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.onix.internship.R
 import com.onix.internship.arch.BaseFragment

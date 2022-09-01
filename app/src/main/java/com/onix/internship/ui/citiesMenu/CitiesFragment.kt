@@ -2,10 +2,11 @@ package com.onix.internship.ui.citiesMenu
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.onix.internship.R
 import com.onix.internship.arch.BaseFragment
 import com.onix.internship.databinding.FragmentCitiesBinding
-import com.onix.internship.ui.citiesMenu.adapter.RecyclerListAdapter
+import com.onix.internship.ui.citiesMenu.adapter.CityRecyclerListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CitiesFragment : BaseFragment<FragmentCitiesBinding>(R.layout.fragment_cities) {
@@ -15,18 +16,30 @@ class CitiesFragment : BaseFragment<FragmentCitiesBinding>(R.layout.fragment_cit
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
 
-        viewModel.setLocation()
+        viewModel.addLocationToRecycler()
 
         setAdapter()
     }
 
+    override fun setObservers() {
+        super.setObservers()
+
+        viewModel.navigateToPrevious.observe(viewLifecycleOwner){
+            navigateToPrevious()
+        }
+    }
+
     private fun setAdapter() {
-        val adapter = RecyclerListAdapter()
+        val adapter = CityRecyclerListAdapter(viewModel)
 
         binding.locationRecycler.adapter = adapter
 
         viewModel.locationList.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
+    }
+
+    private fun navigateToPrevious(){
+        findNavController().popBackStack()
     }
 }
