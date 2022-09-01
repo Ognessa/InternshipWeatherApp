@@ -32,4 +32,7 @@
     <string name="min_temp">MIN.</string>
     <string name="max_temp">MAX.</string>
 
+    <string name="enter_country">Enter Country</string>
+    <string name="done">Search</string>
+
 </resources>

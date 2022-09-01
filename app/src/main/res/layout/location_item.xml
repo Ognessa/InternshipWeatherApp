@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{@string/city(locationItem.city.name, locationItem.city.country)}"
+            android:text="@{@string/city}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/todayTemp"
@@ -30,7 +30,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{@string/today(locationItem.list[0].main.temp)}"
+            android:text="@{@string/today}"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/tomorrowTemp"
@@ -40,7 +40,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/todayWeatherImg"
-            loadUrlImage="@{locationItem.list[0].weather[0].icon}"
+            loadUrlImage="@{}"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/todayTemp"
@@ -52,7 +52,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{@string/tomorrow(locationItem.list[2].main.temp)}"
+            android:text="@{@string/tomorrow}"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/tomorrowWeatherImg"
-            loadUrlImage="@{locationItem.list[2].weather[0].icon}"
+            loadUrlImage="@{}"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/tomorrowTemp"

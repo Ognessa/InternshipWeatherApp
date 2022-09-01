@@ -24,4 +24,6 @@
     <string name="add_location">Додати країну</string>
     <string name="min_temp">МІН.</string>
     <string name="max_temp">МАКС.</string>
+    <string name="enter_country">Введіть назву країни</string>
+    <string name="done">Пошук</string>
 </resources>

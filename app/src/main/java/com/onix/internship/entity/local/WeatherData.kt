@@ -1,7 +1,8 @@
 package com.onix.internship.entity.local
 
 data class WeatherData(
-    val dt : Int,
+    val date : String,
+    val time : String,
     val main : MainWeatherData,
     val weather : List<WeatherList>,
     val clouds : CloudsData,

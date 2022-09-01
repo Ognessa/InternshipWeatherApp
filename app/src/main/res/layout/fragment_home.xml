@@ -27,7 +27,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dayRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layoutManager="LinearLayoutManager"
                 app:layout_constraintTop_toTopOf="parent"
