@@ -1,6 +1,5 @@
 package com.onix.internship.data.mappers
 
-import android.util.Log
 import com.onix.internship.arch.mapper.Mapper
 import com.onix.internship.entity.apiObjects.ApiData
 import com.onix.internship.entity.apiObjects.ApiWeatherData
@@ -26,13 +25,11 @@ class ApiDataMapper(
         val dataMap = hashMapOf<String, List<WeatherData>>()
 
         weatherDataList.forEach {
-            Log.d("DEBUG", it.toString())
             val tempList = mutableListOf<WeatherData>()
             dataMap[it.date]?.let { it1 -> tempList.addAll(it1) }
             tempList.add(it)
             dataMap[it.date] = tempList
         }
-        Log.d("DEBUG", dataMap.toString())
 
         return dataMap
     }
