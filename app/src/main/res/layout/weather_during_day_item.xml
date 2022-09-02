@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="weatherDuringDay"
+            type="com.onix.internship.entity.local.WeatherData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.time}"
+            app:layout_constraintBottom_toTopOf="@+id/tempText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weatherImage"
+            loadUrlImage="@{weatherDuringDay.weather[0].icon}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/tempText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
+        <TextView
+            android:id="@+id/tempText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.main.temp}"
+            app:layout_constraintBottom_toTopOf="@+id/feelsLikeTempText"
+            app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
+        <TextView
+            android:id="@+id/feelsLikeTempText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.main.feels_like}"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_color_16_sp"
+            app:layout_constraintBottom_toTopOf="@+id/pressureText"
+            app:layout_constraintTop_toBottomOf="@+id/tempText" />
+
+        <TextView
+            android:id="@+id/pressureText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.main.pressure}"
+            app:layout_constraintBottom_toTopOf="@+id/humidityText"
+            app:layout_constraintTop_toBottomOf="@+id/feelsLikeTempText" />
+
+        <TextView
+            android:id="@+id/humidityText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.main.humidity}"
+            app:layout_constraintBottom_toTopOf="@+id/windSpeedText"
+            app:layout_constraintTop_toBottomOf="@+id/pressureText" />
+
+        <TextView
+            android:id="@+id/windSpeedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{weatherDuringDay.wind.speed}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidityText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

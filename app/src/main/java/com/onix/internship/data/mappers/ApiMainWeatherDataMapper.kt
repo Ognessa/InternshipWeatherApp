@@ -7,15 +7,24 @@ import com.onix.internship.entity.local.MainWeatherData
 class ApiMainWeatherDataMapper : Mapper<ApiMainWeatherData, MainWeatherData>() {
     override fun map(from: ApiMainWeatherData): MainWeatherData {
         return MainWeatherData(
-            temp = (from.temp - 273.15).toInt(),
-            feels_like = from.feels_like,
-            temp_min = ((from.temp_min - 273.15).toInt()).toString(),
-            temp_max = ((from.temp_max - 273.15).toInt()).toString(),
-            pressure = from.pressure,
+            temp = convertTemp(from.temp),
+            feels_like = convertTemp(from.feels_like),
+            temp_min = convertTemp(from.temp_min),
+            temp_max = convertTemp(from.temp_max),
+            pressure = from.pressure.toString(),
             sea_level = from.sea_level,
             grnd_level = from.grnd_level,
-            humidity = from.humidity,
+            humidity = from.humidity.toString(),
             temp_kf = from.temp_kf
         )
+    }
+
+    private fun convertTemp(temp: Double): String {
+        val c = (temp - 273.15).toInt()
+        return if (c > 0) {
+            "+$c"
+        } else {
+            c.toString()
+        }
     }
 }

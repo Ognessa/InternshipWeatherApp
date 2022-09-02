@@ -41,7 +41,7 @@ abstract class BaseDialog<T : ViewDataBinding>(@LayoutRes private val resId: Int
         viewModel.massageEvent.observe(viewLifecycleOwner) { showSnack(it) }
     }
 
-    protected fun showSnack(msg: String) {
+    private fun showSnack(msg: String) {
         Snackbar.make(this.requireView(), msg, Snackbar.LENGTH_SHORT).show()
     }
 

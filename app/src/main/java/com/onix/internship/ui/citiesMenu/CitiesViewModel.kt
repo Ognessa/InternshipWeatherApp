@@ -10,7 +10,7 @@ import com.onix.internship.ui.homeMenu.HomeModel
 import com.onix.internship.ui.tabMenu.TabModel
 
 class CitiesViewModel(
-    private val storage: LocationStorage,
+    val storage: LocationStorage,
     private val tabModel: TabModel,
     private val homeModel: HomeModel
 ) : BaseViewModel(), OnItemClickListener {
@@ -26,6 +26,7 @@ class CitiesViewModel(
     }
 
     fun navigateToAddLocationFragment() {
+        tabModel.location.set("")
         tabModel.goToAddFragment.value = Unit
     }
 
