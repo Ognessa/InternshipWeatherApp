@@ -31,7 +31,7 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val resId: I
         navController.navigate(resId, args)
     }
 
-    private fun showToast(msg: String) {
+    protected fun showToast(msg: String) {
         Snackbar.make(binding.root, msg, Snackbar.LENGTH_SHORT).show()
     }
 }
