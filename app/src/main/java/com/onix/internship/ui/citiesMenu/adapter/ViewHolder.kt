@@ -11,6 +11,7 @@ class ViewHolder(
     BaseViewHolder<Data, LocationItemBinding>(locationItemBinding) {
     override fun bindView(position: Int) {
         binding.locationItem = item
+
         binding.mainItemContainer.setOnClickListener {
             onItemClickListener.setNewCityToTrack(item)
         }

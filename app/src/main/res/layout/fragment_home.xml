@@ -27,11 +27,108 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dayRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:orientation="horizontal"
                 app:layoutManager="LinearLayoutManager"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/day_item" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/topDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:dividerColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/dayRecycler" />
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tempText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/weatherDuringDayRecycler" />
+
+            <TextView
+                android:id="@+id/tempText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/time_temp"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_color_16_sp"
+                app:layout_constraintBottom_toTopOf="@+id/feelsLikeTempText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
+            <TextView
+                android:id="@+id/feelsLikeTempText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/feels_like_temp"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_color_16_sp"
+                app:layout_constraintBottom_toTopOf="@+id/pressureText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tempText" />
+
+            <TextView
+                android:id="@+id/pressureText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/pressure"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintBottom_toTopOf="@+id/humidityText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feelsLikeTempText" />
+
+            <TextView
+                android:id="@+id/humidityText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/day_humidity"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintBottom_toTopOf="@+id/windSpeedText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pressureText" />
+
+            <TextView
+                android:id="@+id/windSpeedText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/day_wind_speed"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_color_16_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/weatherDuringDayRecycler"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/humidityText" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/bottomDivider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                app:dividerColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/weatherDuringDayRecycler"
+                app:layout_constraintEnd_toStartOf="@+id/weatherDuringDayRecycler"
+                app:layout_constraintStart_toEndOf="@+id/timeText"
+                app:layout_constraintTop_toTopOf="@+id/weatherDuringDayRecycler" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weatherDuringDayRecycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layoutManager="LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/timeText"
+                app:layout_constraintTop_toBottomOf="@+id/dayRecycler"
+                tools:listitem="@layout/weather_during_day_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
