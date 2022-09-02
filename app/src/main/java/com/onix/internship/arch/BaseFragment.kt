@@ -42,7 +42,7 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
         viewModel.massageByIdEvent.observe(viewLifecycleOwner) {showSnack(resources.getString(it))}
     }
 
-    private fun showSnack(msg: String) {
+    protected fun showSnack(msg: String) {
         Snackbar.make(this.requireView(), msg, Snackbar.LENGTH_SHORT).show()
     }
 
